@@ -7,17 +7,6 @@ namespace DefaultNamespace
         private bool isHollTopTriggered = false;
         private Vector3 startPosition;
 
-        private void Start()
-        {
-            startPosition = transform.position;
-        }
-
-        private void Update()
-        {
-            if(Input.GetKeyDown(KeyCode.Space))
-                transform.position = startPosition;
-        }
-
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("HollTop"))
