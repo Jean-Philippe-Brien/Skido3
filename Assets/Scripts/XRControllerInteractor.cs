@@ -84,14 +84,6 @@ public class XRControllerInteractor : MonoBehaviour
         // Detect grip button press
         if (controllerDevice.TryGetFeatureValue(CommonUsages.gripButton, out bool gripPressed))
         {
-            if (gripPressed && !isGripPressed)
-            {
-                Debug.Log("Grip Pressed");
-            }
-            else if (!gripPressed && isGripPressed)
-            {
-                Debug.Log("Grip Released");
-            }
             isGripPressed = gripPressed;
         }
         
@@ -101,10 +93,6 @@ public class XRControllerInteractor : MonoBehaviour
             {
                 if(canRestartGame)
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            }
-            else if (!PrimaryButtonPressed && isPrimaryButtonPressed)
-            {
-                Debug.Log("Grip Released");
             }
             isPrimaryButtonPressed = PrimaryButtonPressed;
         }
